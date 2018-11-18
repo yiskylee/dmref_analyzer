@@ -1,0 +1,40 @@
+index,name,unit,options,description
+0,experimentType,,"BK, IV, Ten, TenS, Tor, TenCycInc, TorCycInc, F, IVF, TenF, TenS, R1, R2, R3, R4, R5, RF1, RF2, RF3, RF4, RF5",
+1,company,,NC,
+2,sampleType,,"S, R, R2Y1, R2Y3, R2Y5, R2Y36, R2Y38, R2Y39, R2Y42, R2Y43, R2Y44",
+3,temperature,Celsius,RT,
+4,gasAtmosphere,,"Air, Argon",
+5,length,mm,0 to 30,"length of IV, IVF "
+6,lengthTensile,mm,4 to 9,length of tensile test
+7,diameter,micrometer,80 to 250,
+8,width,mm,0.7 to 5,
+9,thickness,mm,0.01 to 0.15,
+10,linearMassDensity,tex,"9.1, 14.4",
+11,voltage,V,"1.5,2,3,4,4.5,5,6,7.5,8,9,10,13,16,20","Applied voltage for fusion ONLY, no voltage column is reserved for IV or IVF"
+12,freq,Hz,"0.3,1.5, 9.1, 2.5, 13, 23,25, 43, 62, 78, 99, 145, 147",
+13,totalNumOfCycles,,"100, 138, 192, 300, 380, 500, 1000, 2000, 2500, 3750,4000, 5000, 6000, 7620, 10000, 11320, 16800, 15200",
+14,pressure,mTorr,"10, 11, 20,21,22,23,24,25,27,28,29,30,31,32,33, 14, 26, 25,24,12",
+15,dGRatio,,0.02 to 0.7,
+16,gprimeGRatio,to,0.4 to 0.8,
+17,dPeakPosition,,1300 to 1370,
+18,gPeakPosition,,1500 to 1600,
+19,gprimePeakPosition,,2600 to 2700,
+20,weightBefore,mg,,
+21,weightAfter,mg,,
+22,axialLoad,N,1.2,
+23,numRotationsPerUnitLength,rotation/m,0 to 3,
+24,twistAngle,degree,5 to 35,
+25,dryOrWet,,"dry, wet70Ethanol, wet100Ethanol, wet100Acetone, wet20Acetone",
+26,rotatingSpeed,degree/s,90,
+27,numIncre,,1 to 15,
+28,syncTime,s,0 to 0.2,
+29,numRepeatingCycle,,5,
+30,dataRecFreq,Hz,50,
+31,restTimePerIncre,s,1,
+32,twistOrientation,,"clockwise, counterclockwise",
+33,density,gr/cm^3,0 to 2,Density of the sample
+34,degreeOfMisalignment,degree,0 to 90,Average degree of deviation of each CNT with respect to the fiber's axis
+35,averageLength,Micron,0.001 to 0.1,Average length of the CNTs inside the fiber
+36,maxLength,Micron,0.01 to 0.5,Maximum length of CNTs inside the fiber
+37,bundlingExtent,,1 to 100,Number of clusters in the cross section
+38,sampleID,,1 to 3500,
