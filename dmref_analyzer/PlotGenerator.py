@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -17,14 +19,13 @@ import sys
 
 def plot_dendro(X, labels, metric='euclidean'):
   # labels must be np array, otherwise indexing in dendrogram is problematic
-  plt.rc('font', size=16)
   labels = np.array(labels)
   Y = linkage(pdist(X, metric=metric), method='ward')
   fig = plt.figure(figsize=(15, 15))
   ax_heat = fig.add_axes([0, 0, 1, 0.7])
   ax_dendro = fig.add_axes([0, 0.80, 1, 0.2])
-  Z = dendrogram(Y, ax=ax_dendro, labels=labels, leaf_font_size=16,
-                 leaf_rotation=90)
+  Z = dendrogram(Y, ax=ax_dendro, labels=labels, leaf_font_size=30,
+                 leaf_rotation=30)
   ax_dendro.yaxis.set_visible(False)
   for pos in ['left', 'right', 'bottom', 'top']:
     ax_dendro.spines[pos].set_visible(False)
@@ -38,8 +39,8 @@ def plot_dendro(X, labels, metric='euclidean'):
   ax_heat.get_xaxis().set_visible(False)
   # ax_heat.axis('off')
   ax_heat.set_yticks(np.arange(len(labels)))
-  ax_heat.set_yticklabels(labels[index], fontsize=14)
-  plt.rc('font', size=20)
+  ax_heat.set_yticklabels(labels[index], fontsize=30)
+  # plt.rc('font', size=20)
   plt.savefig('./figures/dendro.png', dpi=600, bbox_inches='tight')
   plt.savefig('./figures/dendro.pdf', bbox_inches='tight')
 
