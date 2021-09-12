@@ -7,7 +7,6 @@ from dmref_analyzer.PlotGenerator import plot_learning_curve
 from sklearn.model_selection import ShuffleSplit
 
 
-
 def gen_v(df):
     voltages = df.v
     times = df.time
@@ -35,7 +34,7 @@ def gen_x(rng=np.arange(17, 10000)):
     tList = []
     dList = []
     gasAtmList = []
-    for root, dirs, filenames in os.walk('../../Ji Hao/'):
+    for root, dirs, filenames in os.walk('./RamanData/'):
         if len(filenames) > 1:
             for filename in filenames:
                 sampleID = int(root.split('/')[-1])
@@ -55,7 +54,8 @@ def gen_x(rng=np.arange(17, 10000)):
                         dList.append(d)
                     if filename == 'Parameters.txt':
                         inputFile = root + '/' + filename
-                        paramMatrix = pd.read_csv(inputFile, delimiter='_', header=None)
+                        paramMatrix = pd.read_csv(
+                            inputFile, delimiter='_', header=None)
                         paramMatrix.columns = paramFile.name.values
                         paramMatrix.index = paramMatrix.experimentType
                         #                         sampleID = int(paramMatrix.sampleID[0])
@@ -68,7 +68,8 @@ def gen_x(rng=np.arange(17, 10000)):
                        'timeVolOnPerPul': tList,
                        'dutyCycle': dList,
                        'gasAtmosphere': gasAtmList})
-    df = df[['sampleNum', 'frequency', 'voltage', 'totalTimeVolOn', 'timeVolOnPerPul', 'dutyCycle', 'gasAtmosphere']]
+    df = df[['sampleNum', 'frequency', 'voltage', 'totalTimeVolOn',
+             'timeVolOnPerPul', 'dutyCycle', 'gasAtmosphere']]
     df.sort_values(by='sampleNum', inplace=True)
     df.set_index('sampleNum', inplace=True)
     return df
@@ -81,7 +82,7 @@ def gen_y(rng=np.arange(17, 10000)):
 def gen_r_after(rng=np.arange(17, 10000)):
     rList = []
     sampleList = []
-    for root, dirs, filenames in os.walk('../../Ji Hao/'):
+    for root, dirs, filenames in os.walk('./RamanData/'):
         for filename in filenames:
             if 'IVF' in filename:
                 inputFile = root + '/' + filename
@@ -106,7 +107,7 @@ def gen_r_after(rng=np.arange(17, 10000)):
 def gen_r_before(rng=np.arange(17, 10000)):
     rList = []
     sampleList = []
-    for root, dirs, filenames in os.walk('../../Ji Hao/'):
+    for root, dirs, filenames in os.walk('./RamanData/'):
         for filename in filenames:
             if 'IV' in filename and 'F' not in filename:
                 sampleNum = int(root.split('/')[-1])
@@ -138,14 +139,14 @@ def spline(X, y, features, outcome):
     estimator.fit(X, y)
     # if estimator.rsq_ > 0.5:
     #     print outcome, 'r2 score: ', estimator.rsq_
-    print '================='
-    print 'Features Importance:'
+    print('=================')
+    print('Features Importance:')
     # printing feature importances with x0 to xn
     # mapped to real features name
     for line in estimator.summary_feature_importances().split('\n'):
         line_cleaned = line.split()
         if len(line_cleaned) == 2:
-            print line_cleaned[0], line_cleaned[1], \
-                feature_s[line_cleaned[0]]
-    print 'r2 score: ', estimator.rsq_
+            print(line_cleaned[0], line_cleaned[1],
+                  feature_s[line_cleaned[0]])
+    print('r2 score: ', estimator.rsq_)
     return estimator

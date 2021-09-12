@@ -2,6 +2,7 @@ import util
 import pandas as pd
 import sys
 import re
+from os.path import dirname, abspath
 
 
 def rename_param(input_dir, old_name, new_name):
@@ -10,7 +11,7 @@ def rename_param(input_dir, old_name, new_name):
     for param_file in param_files:
         param_df = pd.read_csv(param_file)
         if old_name not in param_df.columns:
-            print "Old name does not exist in " + param_file + " continue..."
+            print("Old name does not exist in " + param_file + " continue...")
             continue
         else:
             param_df.rename(columns={old_name: new_name}, inplace=True)
@@ -36,7 +37,7 @@ def update_param_file(input_dir, new_param_rule_file):
 
 
 if __name__ == "__main__":
-    path = "/home/xiangyu/Dropbox/DMREF/Database/"
-    new_param_rule_file = "/home/xiangyu/Dropbox/DMREF/parameter_rules_new.csv"
+    path = dirname(dirname(abspath(__file__)))
+    new_param_rule_file = "./parameter_rules_new.csv"
     update_param_file(path, new_param_rule_file)
     # rename_param(path, "twistOrientation", "twistOrientation")

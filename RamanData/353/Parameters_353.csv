@@ -1,0 +1,9 @@
+experimentType,company,sampleType,temperature,gasAtmosphere,length,lengthTensile,diameter,width,thickness,linearMassDensity,voltage,freq,totalNumOfCycles,pressure,dGRatio,gprimeGRatio,dPeakPosition,gPeakPosition,gprimePeakPosition,weightBefore,weightAfter,axialLoad,numRotationsPerUnitLength,twistAngle,dryOrWet,rotatingSpeed,numIncre,syncTime,numRepeatingCycle,dataRecFreq,restTimePerIncre,twistOrientation,density,degreeOfMisalignment,averageLength,maxLength,bundlingExtent,sampleID
+IV,NC,S,RT,Argon,7,,,,,9.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,353
+F,NC,S,RT,Argon,7,,,,,9.1,9,99,15200,10,,,,,,,,,,,,,,,,,,,,,,,,353
+IVF,NC,S,RT,Argon,7,,,,,9.1,9,99,15200,10,,,,,,,,,,,,,,,,,,,,,,,,353
+RF1,NC,S,,,,,,,,,9,99,15200,,,,,,,,,,,,,,,,,,,,,,,,,353
+RF2,NC,S,,,,,,,,,9,99,15200,,,,,,,,,,,,,,,,,,,,,,,,,353
+RF3,NC,S,,,,,,,,,9,99,15200,,,,,,,,,,,,,,,,,,,,,,,,,353
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,353
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,353

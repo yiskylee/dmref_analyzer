@@ -1,0 +1,6 @@
+experimentType,company,sampleType,temperature,gasAtmosphere,length,lengthTensile,diameter,width,thickness,linearMassDensity,voltage,freq,totalNumOfCycles,pressure,dGRatio,gprimeGRatio,dPeakPosition,gPeakPosition,gprimePeakPosition,weightBefore,weightAfter,axialLoad,numRotationsPerUnitLength,twistAngle,dryOrWet,rotatingSpeed,numIncre,syncTime,numRepeatingCycle,dataRecFreq,restTimePerIncre,twistOrientation,density,degreeOfMisalignment,averageLength,maxLength,bundlingExtent,sampleID
+RF1,NC,S,,,,,,,,,9.0,2.5,2000.0,,0.118484672823,0.554393253317,1336.46,1566.72,2657.59,,,,,,,,,,,,,,,,,,,318
+RF2,NC,S,,,,,,,,,9.0,2.5,2000.0,,0.118934432002,0.554393304238,1336.42,1566.72,2657.59,,,,,,,,,,,,,,,,,,,318
+RF3,NC,S,,,,,,,,,9.0,2.5,2000.0,,0.118484612606,0.554393228186,1336.46,1566.72,2657.59,,,,,,,,,,,,,,,,,,,318
+RF4,NC,S,,,,,,,,,9.0,2.5,2000.0,,0.119085391367,0.554392040606,1336.5,1566.72,2657.59,,,,,,,,,,,,,,,,,,,318
+RF5,NC,S,,,,,,,,,9.0,2.5,2000.0,,0.118484367938,0.554392379093,1336.46,1566.72,2657.59,,,,,,,,,,,,,,,,,,,318
