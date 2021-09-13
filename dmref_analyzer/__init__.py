@@ -1,1 +1,1 @@
-from DataMatrix import DataMatrix
+from .DataMatrix import DataMatrix
