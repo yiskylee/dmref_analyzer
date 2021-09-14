@@ -1,3 +1,10 @@
+import sys
+from os.path import dirname, abspath
+import os
+
+dmref_path = os.path.abspath(os.path.join(__file__, "../.."))
+sys.path.append(dmref_path)
+
 import scipy.interpolate as inter
 import matplotlib.gridspec as gridspec
 import dmref_analyzer.ModelSelection as ms
@@ -13,8 +20,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import Ridge
 import numpy as np
-from os.path import dirname, abspath
-import os
 import pandas as pd
 import matplotlib
 
