@@ -5,13 +5,15 @@ import pandas as pd
 from sklearn.preprocessing import scale
 import numpy as np
 
+
 def skewness(x):
     n = len(x)
     x_mean = np.mean(x)
     x_centered = x - x_mean
     v = np.sum(np.square(x_centered)) / (n - 1)
     return np.max(x) / np.min(x), \
-           np.sum(np.power(x_centered, 3)) / ((n - 1)*np.power(v, 1.5))
+        np.sum(np.power(x_centered, 3)) / ((n - 1)*np.power(v, 1.5))
+
 
 def find(name, path):
     for root, dirs, files in os.walk(path):
@@ -39,21 +41,22 @@ def find_file_with_regex(base_dir, file_pattern, sample_id):
         # if there are multiple data files, it must be R, RF, and F
         # F and R could have multiple data files.
         if file_type not in ['R', 'F', 'RF']:
-            print "Multiple parameter / data files for sample " + \
-                  str(sample_id) + " found: "
+            print("Multiple parameter / data files for sample " +
+                  str(sample_id) + " found: ")
             for param_file in file_paths:
-                print param_file
+                print(param_file)
             raise Exception("exiting...")
         else:
             # there are duplicate names in multiple data files
             if len(set(file_paths)) != len(file_paths):
-                print "Duplicated files found for sample " + \
-                      str(sample_id)
+                print("Duplicated files found for sample " +
+                      str(sample_id))
                 for file in file_paths:
-                    print file
+                    print(file)
                 raise Exception("exiting...")
             else:
                 return file_paths
+
 
 def find_files_with_regex(base_dir, file_pattern, sample_id):
     file_paths = [os.path.abspath(os.path.join(root, file_name))
@@ -63,24 +66,27 @@ def find_files_with_regex(base_dir, file_pattern, sample_id):
     if len(file_paths) == 1:
         return file_paths
     elif len(file_paths) == 0:
-        print file_type + " file for sample " + str(sample_id) + " does not exist, skipping..."
+        print(file_type + " file for sample " +
+              str(sample_id) + " does not exist, skipping...")
         return False
     else:
         if file_type != "F":
-            print "Multiple parameter files for sample " + str(sample_id) + " found: "
+            print("Multiple parameter files for sample " +
+                  str(sample_id) + " found: ")
             for param_file in file_paths:
-                print param_file
+                print(param_file)
             raise Exception("exiting...")
 
         else:
             # there are duplicate names in fusion data files
             if len(set(file_paths)) != len(file_paths):
-                print "Duplicated files found for sample " + str(sample_id)
+                print("Duplicated files found for sample " + str(sample_id))
                 for file in file_paths:
-                    print file
+                    print(file)
                 raise Exception("exiting...")
             else:
                 return file_paths
+
 
 def find_files_with_regex(base_dir, file_pattern):
     file_paths = [os.path.abspath(os.path.join(root, file_name))
@@ -111,9 +117,9 @@ def gen_normalized_dataset(data, features, outcomes):
             data=scale(data[features].as_matrix(), axis=0),
             columns=features)
 
+
 def scale_test_data(test_data, train_data):
     return (test_data - np.mean(train_data, axis=0)) / np.std(train_data, axis=0)
-
 
 
 def plot_fused_vs_orig(rf_mat, r_mat, feature):
